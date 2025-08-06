@@ -32,12 +32,12 @@ const projectsData = [
     },
     {
         id: 4,
-        tittle: "BarberShop",
-        description: "Gerenciador de tarefas",
-        image: "/images/Construction-1.jpg",
+        tittle: "Almeida BarberShop",
+        description: "Sistema completo para barbearia com agendamento, gestão de clientes e serviços",
+        image: "/images/Banner_almeida.png",
         gitUrl: "https://github.com/Joao2708-P/Barber_shop",
         viewUrl: "https://barber-shop-gules-six.vercel.app/",
-        tag: ["All", "web"]
+        tag: ["All", "Web"]
     }
 
 ]
