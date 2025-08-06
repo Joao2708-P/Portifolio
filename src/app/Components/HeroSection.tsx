@@ -4,6 +4,20 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
+    
+    const handleDownloadCV = () => {
+        // Cria um link temporário para download
+        const link = document.createElement('a');
+        link.href = '/João guilherme (1).pdf';
+        link.download = 'João guilherme (1).pdf';
+        link.target = '_blank';
+        
+        // Adiciona o link ao DOM, clica nele e remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return(
         <section>
             <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -31,12 +45,15 @@ const HeroSection = () => {
                         com front-end e criação de designs.
                     </p>
                     <div>
-                        <button className="px-6 py-3 border-sky-600 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-sky-700 
+                        {/* <button className="px-6 py-3 border-sky-600 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-sky-700 
                          via-purple-700 to-orange-700 hover:bg-slate-200">
                             Conheça-me
-                        </button>
-                        <button className="px-1 py-1 rounded-full bg-transparent w-full sm:w-fit bg-gradient-to-br from-sky-700 
-                         via-purple-700 to-orange-700  mt-3">
+                        </button> */}
+                        <button 
+                            onClick={handleDownloadCV}
+                            className="px-1 py-1 rounded-full bg-transparent w-full sm:w-fit bg-gradient-to-br from-sky-700 
+                             via-purple-700 to-orange-700  mt-3 cursor-pointer transition-all duration-300 hover:scale-105"
+                        >
                             <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Download CV</span>
                         </button>
                     </div>

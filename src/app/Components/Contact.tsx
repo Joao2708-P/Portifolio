@@ -1,29 +1,27 @@
 "use client"
 import Link from "next/link";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from '@hookform/resolvers/zod'
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-
-
-const creatFormSchema = z.object({
-    email: z.string().email('Email inválido!'),
-    assunto: z.string(),
-    mensagem: z.string()
-})
-
-type FormData = z.infer<typeof creatFormSchema>
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
     
-    const {register, handleSubmit, formState: {errors} } = useForm<FormData>({
-        resolver: zodResolver(creatFormSchema)
-    })
-
-    const onSubmit = (data: FormData) => {
-        console.log(data)
+    const handleWhatsAppClick = () => {
+        // Substitua pelo seu número de WhatsApp (formato: 5511999999999)
+        const phoneNumber = "5519995357442"; // Altere para seu número real
+        
+        // Mensagem pré-formatada
+        const message = "Olá João! Vi seu portfólio e gostaria de conversar sobre um projeto. Podemos agendar uma conversa?";
+        
+        // Codifica a mensagem para URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Cria o link do WhatsApp
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        
+        // Abre o WhatsApp em uma nova aba
+        window.open(whatsappUrl, '_blank');
     }
 
     return(
@@ -35,7 +33,7 @@ const Contact = () => {
                     <p className="text-[#d2d2d2] mb-4 max-w-md">
                         Entre em contato, caso queira o desenvolvimento de seus projetos,
                         estou sempre em busca de oportunidades, para o desenvolvimento de 
-                        projetos. Atentando-se sempre aos detlhes exigidos pelo cliente 
+                        projetos. Atentando-se sempre aos detalhes exigidos pelo cliente 
                     </p>
                     <div className="socials flex flex-row gap-2 ">
                         <Link href="https://github.com/Joao2708-P">
@@ -45,55 +43,31 @@ const Contact = () => {
                             <FaLinkedin className="text-6xl "/>
                         </Link> 
                     </div>
-                    <div>
-                        
-                    </div>
                 </div>
-                <div>
-                    <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
-                        <div className="mb-6">
-                            <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
-                                Seu Email
-                            </label>
-                            <input 
-                            type="email" 
-                            {...register('email')}
-                            id="email"
-                            className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5" 
-                            required placeholder="exemplo@gmail.com" />
-                            {errors.email && <p>{errors.email.message}</p>}
-                        </div>
-
-                        <div className="mb-6">
-                            <label htmlFor="assunto" className="text-white block mb-2 text-sm font-medium">
-                                Assunto
-                            </label>
-                            <input 
-                            type="text" 
-                            id="text"
-                            {...register('assunto')}
-                            className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5" 
-                            required placeholder="Assunto..." />
-                             {errors.assunto && <p>{errors.assunto.message}</p>}
-                        </div>
-
-                        <div className="mb-6">
-                            <label htmlFor="Mensagem" className="text-white block mb-2 text-sm font-medium">
-                                Mensagem
-                            </label>
-                            <textarea  
-                                id="mensagem"
-                                {...register('mensagem')} 
-                                placeholder="Digite sua Mensagem..."
-                                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                            />
-                             {errors.mensagem && <p>{errors.mensagem.message}</p>}
-                        </div>
-
-                        <button type="submit" className="bg-sky-500 hover:bg-sky-700 text-white font-medium py-2.5 px-5 rounded-lg w-full">
-                            Enviar
-                        </button>
-                    </form>
+                
+                <div className="flex flex-col justify-center items-center">
+                    <div className="text-center mb-8">
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                            Vamos Conversar?
+                        </h3>
+                        <p className="text-[#d2d2d2] mb-6 max-w-md">
+                            Clique no botão abaixo para iniciar uma conversa no WhatsApp. 
+                            Estou sempre disponível para discutir novos projetos e oportunidades!
+                        </p>
+                    </div>
+                    
+                    <button 
+                        onClick={handleWhatsAppClick}
+                        className="bg-green-500 hover:bg-green-600 text-white font-medium py-4 px-8 rounded-lg w-full max-w-md flex items-center justify-center gap-3 transition-colors duration-300"
+                    >
+                        <FaWhatsapp className="text-2xl" />
+                        Enviar Mensagem no WhatsApp
+                    </button>
+                    
+                    <p className="text-[#9CA2A9] text-sm mt-4 text-center max-w-md">
+                        Você será direcionado para o WhatsApp com uma mensagem pré-formatada. 
+                        Sinta-se à vontade para personalizar a mensagem antes de enviar!
+                    </p>
                 </div>
             </section>
         </main>

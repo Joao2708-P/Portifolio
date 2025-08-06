@@ -5,17 +5,17 @@ import ProjectCards from "./ProjectCards"
 const projectsData = [
     {
         id: 1,
-        tittle: "IContent - Ampliando seu jeito de aprender",
-        description: "Plataforma que vai inpulsinar o ensino a distância",
-        image: "/images/Construction-1.jpg",
+        tittle: "Inventix",
+        description: "Aplicativo de gerenciamento de estoque( em construção )",
+        image: "/images/Inventix.png",
         gitUrl: "",
         viewUrl: "",
-        tag: ["All", "Web"]
+        tag: ["All", "mobile"]
     },
     {
         id: 2,
-        tittle: "Metricar",
-        description: "Aluguel de carros",
+        tittle: "Asses",
+        description: "Loja de roupas de moda de estilo social e urbano( em construção )",
         image: "/images/Construction-1.jpg",
         gitUrl: "",
         viewUrl: "",
@@ -23,21 +23,21 @@ const projectsData = [
     },
     {
         id: 3,
-        tittle: "Coffe App",
-        description: "Aplicativo de venda de grãos de café",
-        image: "/images/Construction-1.jpg",
-        gitUrl: "",
-        viewUrl: "",
-        tag: ["All", "mobile"]
+        tittle: "AutoZap",
+        description: "Aplicativo de automatização",
+        image: "/images/logo_autoZap.png",
+        gitUrl: "https://github.com/Joao2708-P/AutoZap",
+        viewUrl: "https://auto-zap.vercel.app/",
+        tag: ["All", "Web"]
     },
     {
         id: 4,
-        tittle: "OnActivate",
+        tittle: "BarberShop",
         description: "Gerenciador de tarefas",
         image: "/images/Construction-1.jpg",
-        gitUrl: "",
-        viewUrl: "",
-        tag: ["All", "mobile"]
+        gitUrl: "https://github.com/Joao2708-P/Barber_shop",
+        viewUrl: "https://barber-shop-gules-six.vercel.app/",
+        tag: ["All", "web"]
     }
 
 ]
