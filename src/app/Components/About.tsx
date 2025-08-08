@@ -74,6 +74,9 @@ const About = () => {
                         <div>
                             <li>PIBIC - Projeto de Iniciação Ciêntifica - 
                             AUTOMATIZAÇÃO DE AQUARIO PARA REPRODUÇÃO DEBETTA SPLENDENS EM CATIVEIRO</li>
+                            <li><a href="https://busca360app.com.br/">Plataforma de logistas Busca360</a></li>
+                            <li><a href="https://www.cuscoloko.com.br/">Ecommerce Cuscoloko</a></li>
+                            <li><a href="https://tikbalm.com.br/">Ecommerce Tikbalm</a></li>
                         </div>
                     )}
                 </div>
