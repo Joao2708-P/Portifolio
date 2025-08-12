@@ -14,10 +14,10 @@ const projectsData = [
     },
     {
         id: 2,
-        tittle: "Asses",
+        tittle: "Extensão Busca360",
         description: "Loja de roupas de moda de estilo social e urbano( em construção )",
-        image: "/images/Construction-1.jpg",
-        gitUrl: "",
+        image: "/images/busca360_image.png",
+        gitUrl: "https://github.com/Joao2708-P/extensao_shopee_busca360?tab=readme-ov-file",
         viewUrl: "",
         tag: ["All", "Web"]
     },
@@ -63,14 +63,14 @@ const Projects = () => {
                         Mobile
                     </button>
                 </div>
-                <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+                <div className="grid md:grid-cols-3 gap-12 md:gap-12">
                     {filterProjects.map((project) => <ProjectCards 
-                    key={project.id} 
-                    title={project.tittle} 
-                    description={project.description} 
-                    imageUrl={project.image}
-                    gitUrl={project.gitUrl}
-                    viewUrl={project.viewUrl}/>
+                        key={project.id} 
+                        title={project.tittle} 
+                        description={project.description} 
+                        imageUrl={project.image}
+                        gitUrl={project.gitUrl}
+                        viewUrl={project.viewUrl}/>
                     )}
                 </div>
             </section>

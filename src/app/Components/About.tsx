@@ -49,6 +49,7 @@ const About = () => {
                               <li>C#</li>
                               <li>C++/C</li>
                               <li>TypeScript</li>
+                              <li>PHP</li>
                           </ul>
                           <ul className="list-none">
                               <li>React</li>
@@ -61,6 +62,7 @@ const About = () => {
                               <li>SQL Server</li>
                               <li>HTML/CSS</li>
                               <li>Git/Github</li>
+                              <li>Laravel</li>
                           </ul>
                       </div>
                     )}
@@ -72,11 +74,16 @@ const About = () => {
                     )}
                     {tab === "Experiência" && (
                         <div>
+                            <li className="text-blue-500"><a href="https://busca360app.com.br/">Plataforma de logistas Busca360</a></li>
+                            <li className="text-blue-500"><a href="https://www.cuscoloko.com.br/">Ecommerce Cuscoloko</a></li>
+                            <li className="text-blue-500"><a href="https://tikbalm.com.br/">Ecommerce Tikbalm</a></li>
                             <li>PIBIC - Projeto de Iniciação Ciêntifica - 
                             AUTOMATIZAÇÃO DE AQUARIO PARA REPRODUÇÃO DEBETTA SPLENDENS EM CATIVEIRO</li>
-                            <li><a href="https://busca360app.com.br/">Plataforma de logistas Busca360</a></li>
-                            <li><a href="https://www.cuscoloko.com.br/">Ecommerce Cuscoloko</a></li>
-                            <li><a href="https://tikbalm.com.br/">Ecommerce Tikbalm</a></li>
+                            <li>OBT</li>
+                            <li>OBI</li>
+                            <li>Forum de Profissões em Campinas</li>
+                            <li>Congresso Unicamp</li>
+                            <li>OBIA</li>
                         </div>
                     )}
                 </div>
