@@ -7,30 +7,61 @@ type Props = {
   imageUrl: string;
   title: string;
   description: string;
-  gitUrl: string 
-  viewUrl: string
+  result?: string;
+  gitUrl: string;
+  viewUrl: string;
 };
 
-const ProjectCards: React.FC<Props> = ({ imageUrl, title, description, gitUrl, viewUrl }) => {
+const ProjectCards: React.FC<Props> = ({
+  imageUrl,
+  title,
+  description,
+  result,
+  gitUrl,
+  viewUrl
+}) => {
     return(
-        <div>
-            <div className="h-52 md:h-72 rounded-t-xl relative group" 
-            style={{background: `url(${imageUrl})`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
-                <div className="overlay flex items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
+        <div className="rounded-xl overflow-hidden bg-[#181818]">
 
-                    <Link href={gitUrl} className="h-14 w-14 border-2 relative rounded-full mr-3 border-[#ADB7BE] hover:border-white group/link">
-                        <FaCode className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white  cursor-pointer absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
-                    </Link>
+            {/* Imagem */}
+            <div 
+                className="h-52 md:h-72 relative group"
+                style={{
+                    backgroundImage: `url(${imageUrl})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center"
+                }}
+            >
+                <div className="flex items-center justify-center absolute top-0 left-0 w-full h-full 
+                    bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300">
 
-                    <Link href={viewUrl} className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link">
-                        <IoEyeSharp className="h-10 w-10 text-[#ADB7BE] group-hover/link:text-white cursor-pointer absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
-                    </Link>
+                    <div className="flex gap-4">
+                        <Link href={viewUrl} target="_blank"
+                            className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full text-sm">
+                            <IoEyeSharp /> Ver projeto
+                        </Link>
 
+                        <Link href={gitUrl} target="_blank"
+                            className="flex items-center gap-2 px-4 py-2 border border-white rounded-full text-sm">
+                            <FaCode /> Código
+                        </Link>
+                    </div>
                 </div>
             </div>
-            <div className="text-white mt-3 rounded-b-xl bg-[#181818] py-6 px-4 mb-5">
-                <h5 className="text-xl font-semibold">{title}</h5>
-                <p className="text-[#d2d2d284]">{description}</p>
+
+            {/* Conteúdo */}
+            <div className="p-5">
+                <h5 className="text-xl font-semibold mb-2">{title}</h5>
+
+                {result && (
+                    <p className="text-green-400 text-sm mb-2">
+                        {result}
+                    </p>
+                )}
+
+                <p className="text-[#ADB7BE] text-sm">
+                    {description}
+                </p>
             </div>
         </div>
     )
